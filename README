@@ -5,7 +5,6 @@ Files and Folders in this repository:
 .emacs (emacs configuration)
 .emacs.d (extra emacs modes)
 .mpdscribble (mpd scrobbler configuration)
-.ssh (ssh config, known hosts etc.)
 .vimperator (colour and plugin configurations for vimperator)
 .vimperatorrc (vimperator main configuration)
 .Xdefaults (mainly for urxvt configuration)
