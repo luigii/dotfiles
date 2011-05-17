@@ -1,20 +1,23 @@
-;;; Conall Ó Maitiú's emacs config
+;;; Conall's emacs config
 
-;;; Modeline setup                                                                              ;;;  - somewhat cleaner than default             
+
+;;; Modeline settings
+;;; Prettier than the default
 (setq default-mode-line-format
       '("-"
-       mode-line-mule-info
-       mode-line-modified
-       mode-line-frame-identification
-       mode-line-buffer-identification
-       "  "
-       global-mode-string
-       "   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]--"
-       (line-number-mode "L%l--")
-       (column-number-mode "C%c--")
-       (-3 . "%p")
-       "-%-")
-)
+	mode-line-mule-info
+	mode-line-modified
+	mode-line-frame-identification
+	mode-line-buffer-identification
+	"  "
+	global-mode-string
+	"   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]--"
+	(line-number-mode "L%l--")
+	(column-number-mode "C%c--")
+	(-3 . "%p")
+	"------------------------"
+	system-name)
+      )
 
 ;;; Encoding
 (prefer-coding-system 'utf-8)
@@ -86,18 +89,18 @@
   "Minor mode for pseudo-structurally editing Lisp code." t)
 
 ;;; Slime
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-(require 'slime)
-(slime-setup '(slime-fancy))
+;;;(setq inferior-lisp-program "/usr/bin/sbcl")
+;;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+;;;(require 'slime)
+;;;(slime-setup '(slime-fancy))
 
 ;;; C stuff
 (setq c-basic-offset 8)
 
 ;;; Android Mode
-(require 'android-mode)
-(setq android-mode-sdk-dir "/opt/android-sdk/")
-(setq android-mode-avd "galaxy2")
+;;;(require 'android-mode)
+;;;(setq android-mode-sdk-dir "/opt/android-sdk/")
+;;;(setq android-mode-avd "galaxy2")
 
 ;;; Lua Mode
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
