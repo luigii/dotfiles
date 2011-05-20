@@ -106,6 +106,11 @@
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 
+;;; Erlang Mode
+(setq erlang-root-dir "/usr/lib/erlang")
+(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+(require 'erlang-start)
+
 ;;; Making sure dabbrev works nicely
 (setq dabbrev-case-fold-search t)
 
@@ -113,3 +118,5 @@
 (defalias 'cr            'comment-region)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
+
+

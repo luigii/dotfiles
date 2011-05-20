@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 setxkbmap -layout ie -option ctrl:nocaps &
 urxvtd &
 dropboxd &
