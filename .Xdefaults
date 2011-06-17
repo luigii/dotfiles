@@ -42,7 +42,7 @@ urxvt*urgentOnBell:       true
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
-
+URxvt.colorUL: #86a2be
 ! Appearance
 
 
