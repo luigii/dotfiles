@@ -156,6 +156,7 @@ playlist_disable_highlight_delay = "1"
 ##
 #
 now_playing_prefix = "$b$5»$7»$1» $0"
+#now_playing_prefix = "$b$7♬ $0"
 #
 #now_playing_suffix = "$/b"
 #
@@ -245,7 +246,8 @@ playlist_display_mode = "columns"
 ## Note: You can specify third character which will
 ## be used to build 'empty' part of progressbar.
 ##
-progressbar_look = "─■-"
+#progressbar_look = "─■-"
+progressbar_look = "─»-"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
