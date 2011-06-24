@@ -11,3 +11,4 @@ Files and Folders in this repository:
 .xinitrc (configuration for launching X)
 .xscreensaver (xscreensaver screen locker configuration)
 deadbeefconfig (should be copied to ~/.config/deadbeef/config but I renamed it here for clarity)
+.ncmpcpp/config (making terminal-based music pretty)
