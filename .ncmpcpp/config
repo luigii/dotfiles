@@ -205,7 +205,7 @@ now_playing_prefix = "$b$5»$7»$1» $0"
 ##   not available.
 ##
 #
-song_columns_list_format = "(3f)[cyan]{n:#} (25)[white]{t|f:Track Title} (20)[]{a} (35)[blue]{b} (5f)[green]{lr}"
+song_columns_list_format = "(3f)[cyan]{n:#} (35)[white]{t|f:Track Title} (30)[]{a} (25)[blue]{b} (5f)[green]{lr}"
 #
 ##### various settings #####
 #
