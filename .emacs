@@ -119,4 +119,7 @@
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 
-
+;;; Icicles mode for enhanced tab-completion, regexes etc.
+(setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
+  (require 'icicles)
+(eval-after-load "ring" '(progn (require 'ring+)))

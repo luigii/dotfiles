@@ -35,7 +35,7 @@ alias texi2pdf='texi2pdf --build=clean -q'
 
 export COUNTRY='IE'
 export EDITOR='emacs -nw'
-PATH=$PATH:/usr/bin/site_perl
+PATH=$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin
 export PATH
 
 #Proxies for a netsoc room ethernet connection
