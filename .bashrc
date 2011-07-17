@@ -44,7 +44,7 @@ alias monitoroff='xrandr --output VGA-0 --off'
 alias ls='ls --color=auto'
 alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
 alias emacs='emacs -nw'
-alias scr='screen -dr'
+alias scr='tmux attach'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
 
