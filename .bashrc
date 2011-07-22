@@ -12,7 +12,7 @@ then
     PS1='\e]2;\u@\H \w\a\e[31m\u@\h \W \e[0m\$ '
 fi
 
-PROMPT_COMMAND="history -a; history -n"
+PROMPT_COMMAND="history -a; history -n;"
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
