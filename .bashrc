@@ -29,13 +29,14 @@ alias scr="tmux attach"
 ### Mountpoints and options are long and boring to type out
 
 # keith and raid no longer work since keith became a Lion box
+
 #alias keith='sudo mount -t cifs //keith/Warez /mnt/keith/ -o guest'
 #alias raid='sudo mount -t cifs //keith/RAID /mnt/raid -o guest'
-
 alias spoon='sshfs luigii@spoon: ~/spoon'
 
 
 ### External monitor commands for my 1080p monitor
+### (not sure if I'll ever use this again, but I'll keep it here)
 
 alias monitoron='xrandr --output VGA-0 --mode 1920x1080 --right-of LVDS'
 alias monitoroff='xrandr --output VGA-0 --off'
@@ -46,7 +47,6 @@ alias monitoroff='xrandr --output VGA-0 --off'
 alias ls='ls --color=auto'
 alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
 alias emacs='emacs -nw'
-alias scr='screen -dr'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
 
