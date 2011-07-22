@@ -7,12 +7,11 @@
 if [ "$HOSTNAME" = "catenary" ]
 then
     PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
-elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" -o "$HOSTNAME" = "cube" ]
+elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" ] or [ "$HOSTNAME" = "cube" ]
 then
-    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
+    PS1='\e]2;\u@\H \w\a\e[31m\u@\h \W \e[0m\$ '
 fi
-
-PROMPT_COMMAND="history -a; history -n;"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
@@ -44,7 +43,7 @@ alias monitoroff='xrandr --output VGA-0 --off'
 alias ls='ls --color=auto'
 alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
 alias emacs='emacs -nw'
-alias scr='tmux attach'
+alias scr='screen -dr'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
 
@@ -64,6 +63,9 @@ export HISTFILESIZE
 
 # history time format 
 export HISTTIMEFORMAT='%F %T '
+
+### Shopts
+shopt -s histappend
 
 
 ### Proxies
