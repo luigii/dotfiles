@@ -7,12 +7,15 @@
 if [ "$HOSTNAME" = "catenary" ]
 then
     PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
-elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" ] or [ "$HOSTNAME" = "cube" ]
+elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" -o "$HOSTNAME" = "cube" ]
 then
-    PS1='\e]2;\u@\H \w\a\e[31m\u@\h \W \e[0m\$ '
+    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
 fi
+
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-if [ -f /etc/bash_completion ]; then
+
+if [ -f /etc/bash_completion ] 
+then
     . /etc/bash_completion
 fi
 
@@ -51,7 +54,7 @@ alias df='df -h'
 ### Non-proxy env variables
 
 export COUNTRY='IE'
-export LANG='en_IE.UTF-8'
+export LANG=en_IE.UTF-8
 export EDITOR='emacs -nw'
 
 # adding perl and sonata (ugh) to my path
@@ -64,6 +67,7 @@ export HISTFILESIZE
 
 # history time format 
 export HISTTIMEFORMAT='%F %T '
+
 
 ### Shopts
 shopt -s histappend
