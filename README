@@ -5,6 +5,7 @@ Files and Folders in this repository:
 .emacs (emacs configuration)
 .emacs.d (extra emacs modes)
 .mpdscribble (mpd scrobbler configuration)
+.tmux.conf (it's so much nicer than screen, but C-a is burned into my fingers by now)
 .vimperator (colour and plugin configurations for vimperator)
 .vimperatorrc (vimperator main configuration)
 .Xdefaults (mainly for urxvt configuration)
