@@ -51,6 +51,7 @@ alias df='df -h'
 ### Non-proxy env variables
 
 export COUNTRY='IE'
+export LANG='en_IE.UTF-8'
 export EDITOR='emacs -nw'
 
 # adding perl and sonata (ugh) to my path
