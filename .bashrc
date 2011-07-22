@@ -7,9 +7,9 @@
 if [ "$HOSTNAME" = "catenary" ]
 then
     PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
-elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" ] or [ "$HOSTNAME" = "cube" ]
+elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" -o "$HOSTNAME" = "cube" ]
 then
-    PS1='\e]2;\u@\H \w\a\e[31m\u@\h \W \e[0m\$ '
+    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
 fi
 
 PROMPT_COMMAND="history -a; history -n;"
@@ -44,7 +44,7 @@ alias monitoroff='xrandr --output VGA-0 --off'
 alias ls='ls --color=auto'
 alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
 alias emacs='emacs -nw'
-alias scr='screen -dr'
+alias scr='tmux attach'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
 
