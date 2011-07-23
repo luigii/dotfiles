@@ -6,14 +6,14 @@
 " == Zenburn color scheme settings ==
 hi Bell					border: 0 none; background-color: black;
 hi Boolean				color: #CC9393;
-hi CmdLine				font-family: terminus; padding: 1px;
+hi CmdLine				font-family: dina; padding: 1px;
 hi CmdOutput				white-space: pre;
 hi CompDesc				color: #808080; width: 50%;
 hi CompGroup
 hi CompGroup:not(:first-of-type)	margin-top: .5em;
 hi CompIcon				width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
 hi CompIcon>img				max-width: 16px; max-height: 16px; vertical-align: middle;
-hi CompItem				font-family: terminus; font-size: 11px;
+hi CompItem				font-family: dina; font-size: 14px;
 hi CompItem>*				padding: 0 .5ex;
 hi CompItem[selected]			color: #2E4340; background: #CCDC90;
 hi CompLess				text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
@@ -31,7 +31,7 @@ hi Function				color: navy;
 hi Gradient				height: 1px; margin-bottom: -1px; margin-top: -1px;
 hi GradientLeft				background-color: #ACBC90;
 hi GradientRight			background-color: #3F3F3F;
-hi Hint					font-family: monospace; font-size: 10px; font-weight: bold; color: #385F38; background-color: #F8F893; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
+hi Hint					font-family: dina; font-size: 10px; font-weight: bold; color: #385F38; background-color: #F8F893; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
 hi Hint::after				content: attr(number);
 hi HintActive				background: #F18C96; color: #333333;
 hi HintElem				background-color: #8FAF9F; color: #000D18;
@@ -66,5 +66,5 @@ hi URL:hover				text-decoration: underline; cursor: pointer;
 hi WarningMsg				color: #CC9393; background: #3F3F3F;
 
 style -name statusbar chrome://* <<EOM
-					#liberator-statusline { font-family: terminus ! important; }
+					#liberator-statusline { font-family: dina ! important; }
 EOM

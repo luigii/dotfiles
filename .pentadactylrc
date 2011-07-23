@@ -1,4 +1,4 @@
-" {{{ anrxc's vimperator configuration with Emacs bindings
+" {{{ Conall's pentadactyl settings, based on anrxc's vimperatorrc
 "
 " Bindings
 "   * http://sysphere.org/~anrxc/j/articles/vimperator/index.html
@@ -17,41 +17,26 @@
 " User styles as colorschemes in Vimperator 2
 colorscheme zenburn
 
-" Window title
-set titlestring=Firefox
+" Window title blank
+set titlestring=
+
+" Never show tab bar
+set showtabline=never
 
 " No toolbar and scrollbars by default
-set go-=brT
-set toolbars=nobookmarks,notabs
-
+set go=Ccs
 
 " Editor, C-i invokes it in text fields
-set editor=emacsclient
+set editor=emacs
 
 " Command line and search patterns history
-set history=10000
+set history=100
 
-" Show pattern matches as you type
-set incsearch
-
-" Hilight previous search pattern matches
-set hlsearch
-
-" Override ignorecase if pattern has uppercase chars
-set smartcase
-
-" Show the tab bar only if more then one tab is open
-set showtabline=0
-
-" Focus content after a page has loaded
-set focuscontent
-
-" Show destination links in 1=status line, 2=command line
-set showstatuslinks=2
+" Number of listings displayed
+set maxitems=15
 
 " Show completions and use AwesomeBar (+search plugins)
 set complete=sl
-set wildoptions=auto
 
 " Ex commands output in a new tab by default (prefs, addons...)
 set newtab=all
@@ -275,7 +260,7 @@ javascript <<EOF
     statusPanel.setAttribute("id", "buttons-panel-clone");
     statusPanel.appendChild(document.getElementById("feed-button"));
     statusPanel.appendChild(document.getElementById("star-button"));
-    statusPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    statusPanel.firstChild.setAttribute("style", "padding: 2; max-height: 20px;");
     document.getElementById("status-bar")
             .insertBefore(statusPanel, document.getElementById("security-button"));
 })();
