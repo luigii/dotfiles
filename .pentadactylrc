@@ -15,7 +15,7 @@
 " {{{ Options
 "
 " User styles as colorschemes in Vimperator 2
-colorscheme zenburn
+colorscheme zenburnalternate
 
 " Window title blank
 set titlestring=
