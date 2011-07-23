@@ -258,8 +258,6 @@ javascript <<EOF
 (function(){
     var statusPanel = document.createElement("statusbarpanel");
     statusPanel.setAttribute("id", "buttons-panel-clone");
-    statusPanel.appendChild(document.getElementById("feed-button"));
-    statusPanel.appendChild(document.getElementById("star-button"));
     statusPanel.firstChild.setAttribute("style", "padding: 2; max-height: 20px;");
     document.getElementById("status-bar")
             .insertBefore(statusPanel, document.getElementById("security-button"));
