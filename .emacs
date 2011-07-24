@@ -15,9 +15,13 @@
 	(line-number-mode "L%l--")
 	(column-number-mode "C%c--")
 	(-3 . "%p")
-	"------------------------"
+	"---------------"
 	system-name)
       )
+
+;;; Uniquify, because filename<n> is horrible
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
 
 ;;; Encoding
 (prefer-coding-system 'utf-8)
@@ -30,7 +34,7 @@
 ;;; Text files end in new lines.                                                               
 (setq require-final-newline t)
 
-;;; Change backup behavior to save in a specified directory                                       
+;;; Change backup behavior to save in a specified directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/saves/"))
  backup-by-copying      t
  version-control        t
