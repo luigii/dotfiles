@@ -58,16 +58,20 @@ export LANG=en_IE.UTF-8
 export EDITOR='emacs -nw'
 
 # adding perl and sonata (ugh) to my path
-PATH=$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin
+PATH=$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin:/usr/lib/openssh
 export PATH
 
 # unlimited history, because why not?
 unset HISTFILESIZE
 export HISTFILESIZE
+unset HISTSIZE
+export HISTSIZE
 
 # history time format 
 export HISTTIMEFORMAT='%F %T '
 
+# Ignore commands starting with a space
+export HISTCONTROL=ignorespace
 
 ### Shopts
 shopt -s histappend
