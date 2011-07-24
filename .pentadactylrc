@@ -36,7 +36,7 @@ set history=100
 set maxitems=15
 
 " Disable command timeout (it's annoying)
-set timeout=false
+set notimeout
 
 " Show completions and use AwesomeBar (+search plugins)
 set complete=sl
