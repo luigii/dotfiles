@@ -1,6 +1,5 @@
 ;;; Conall's emacs config
 
-
 ;;; Modeline settings
 ;;; Prettier than the default
 (setq default-mode-line-format
@@ -19,9 +18,11 @@
 	system-name)
       )
 
-;;; Uniquify, because filename<n> is horrible
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward)
+;;; Color Theme (zenburn, naturally)
+(require 'color-theme)
+(add-to-list 'load-path "~/.emacs.d/color-themes")
+(require 'zenburn-theme)
+(setq color-theme-is-global t) 
 
 ;;; Encoding
 (prefer-coding-system 'utf-8)
@@ -30,6 +31,10 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
+
+;;; Uniquify, because filename<n> is horrible
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
 
 ;;; Text files end in new lines.                                                               
 (setq require-final-newline t)
@@ -42,7 +47,6 @@
  kept-new-versions      6
  kept-old-versions      2
 )
-
 
 ;;; Rectangle select is fun
 (add-to-list 'load-path "~/.emacs.d/")
@@ -92,19 +96,8 @@
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
 
-;;; Slime
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-(require 'slime)
-(slime-setup '(slime-fancy))
-
 ;;; C stuff
 (setq c-basic-offset 8)
-
-;;; Android Mode
-;;;(require 'android-mode)
-;;;(setq android-mode-sdk-dir "/opt/android-sdk/")
-;;;(setq android-mode-avd "galaxy2")
 
 ;;; Lua Mode
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
@@ -119,16 +112,30 @@
 (setq dabbrev-case-fold-search t)
 
 ;;; Other aliases and keybindings
-(defalias 'cr            'comment-region)
+(defalias 'cr 'comment-region)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 
-;;; Icicles mode for enhanced tab-completion, regexes etc.
-(setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
-  (require 'icicles)
-(eval-after-load "ring" '(progn (require 'ring+)))
 
-;;; Color Theme
-(require 'color-theme)
-(add-to-list 'load-path "~/.emacs.d/color-themes")
-(require 'zenburn-theme)
+
+;;; Things that only work on my laptop
+;;; (probably) (for now)
+
+;;; Slime
+(if (equal system-name "catenary")
+    ((setq inferior-lisp-program "/usr/bin/sbcl")
+     (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+     (require 'slime)
+     (slime-setup '(slime-fancy))))
+
+;;; Icicles mode for enhanced tab-completion, regexes etc.
+(if (equal system-name "catenary")
+    ((setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
+     (require 'icicles)
+     (eval-after-load "ring" '(progn (require 'ring+)))))
+
+;;; Android Mode
+(if (equal system-name "catenary")
+    ((require 'android-mode)
+     (setq android-mode-sdk-dir "/opt/android-sdk/")
+     (setq android-mode-avd "galaxy2")))

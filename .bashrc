@@ -23,7 +23,7 @@ fi
 
 alias lock="xscreensaver-command -lock"
 alias suspend='sudo pm-suspend'
-alias scr="tmux attach" 
+alias scr="tmux -2 attach" 
 
 
 ### Mountpoints and options are long and boring to type out
