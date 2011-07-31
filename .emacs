@@ -4,18 +4,18 @@
 ;;; Modeline settings
 ;;; Prettier than the default
 (setq default-mode-line-format
-      '("-"
+      '(" "
 	mode-line-mule-info
 	mode-line-modified
 	mode-line-frame-identification
 	mode-line-buffer-identification
 	"  "
 	global-mode-string
-	"   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]--"
+	"   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]  "
 	(line-number-mode "L%l--")
 	(column-number-mode "C%c--")
 	(-3 . "%p")
-	"---------------"
+	"      "
 	system-name)
       )
 
@@ -127,3 +127,8 @@
 (setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
   (require 'icicles)
 (eval-after-load "ring" '(progn (require 'ring+)))
+
+;;; Color Theme
+(require 'color-theme)
+(add-to-list 'load-path "~/.emacs.d/color-themes")
+(require 'zenburn-theme)
