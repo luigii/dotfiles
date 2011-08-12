@@ -1,4 +1,4 @@
-### Conall
+### Conall's bash configuration
 
 ### Startup Things
 [ -z "$PS1" ] && return

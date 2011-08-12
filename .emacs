@@ -24,13 +24,14 @@
 (require 'zenburn-theme)
 (setq color-theme-is-global t) 
 
-;;; Encoding
+;;; Encoding (you can never be sure)
 (prefer-coding-system 'utf-8)
 (set-language-environment 'utf-8)
-(setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(setq slime-net-coding-system 'utf-8-unix)
 
 ;;; Uniquify, because filename<n> is horrible
 (require 'uniquify)
@@ -66,13 +67,11 @@
      (if rm-mark-active 
        (rm-exchange-point-and-mark p) (exchange-point-and-mark p))))
 
-;;; Get rid of the menu bar
+;;; Get rid of the fluff
 (menu-bar-mode -1)
-
-;;; Don't display the 'Welcome to GNU Emacs' buffer on startup
-;;; and make the Scratch buffer blank
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+(scroll-bar-mode -1)
 
 ;;; Always highlight syntax
 (global-font-lock-mode t)
@@ -120,22 +119,20 @@
 
 ;;; Things that only work on my laptop
 ;;; (probably) (for now)
+(when (equal system-name "catenary")
 
 ;;; Slime
-(if (equal system-name "catenary")
-    ((setq inferior-lisp-program "/usr/bin/sbcl")
-     (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-     (require 'slime)
-     (slime-setup '(slime-fancy))))
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+  (require 'slime)
+  (slime-setup '(slime-fancy))
 
 ;;; Icicles mode for enhanced tab-completion, regexes etc.
-(if (equal system-name "catenary")
-    ((setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
-     (require 'icicles)
-     (eval-after-load "ring" '(progn (require 'ring+)))))
+  (setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
+  (require 'icicles)
+  (eval-after-load "ring" '(progn (require 'ring+)))
 
 ;;; Android Mode
-(if (equal system-name "catenary")
-    ((require 'android-mode)
-     (setq android-mode-sdk-dir "/opt/android-sdk/")
-     (setq android-mode-avd "galaxy2")))
+  (require 'android-mode)
+  (setq android-mode-sdk-dir "/opt/android-sdk/")
+  (setq android-mode-avd "galaxy2"))
