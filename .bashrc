@@ -46,7 +46,7 @@ alias monitoroff='xrandr --output VGA-0 --off'
 
 alias ls='ls --color=auto'
 alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
-alias emacs='emacs -nw'
+alias emacs='emacsclient -t'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
 
@@ -55,7 +55,8 @@ alias df='df -h'
 
 export COUNTRY='IE'
 export LANG=en_IE.UTF-8
-export EDITOR='emacs -nw'
+export EDITOR='emacsclient -t -a ""'
+export ALTERNATE_EDITOR=""
 
 # adding perl and sonata (ugh) to my path
 PATH=$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin:/usr/lib/openssh

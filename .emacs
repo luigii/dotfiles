@@ -49,7 +49,7 @@
  kept-old-versions      2
 )
 
-;;; Rectangle select is fun
+;;; Rectangle select is fun and very useful
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'rect-mark)
 (global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
@@ -95,7 +95,7 @@
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
 
-;;; C stuff
+;;; C Mode Settings
 (setq c-basic-offset 8)
 
 ;;; Lua Mode
@@ -114,6 +114,7 @@
 (defalias 'cr 'comment-region)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
+(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil))) 
 
 
 
@@ -121,18 +122,18 @@
 ;;; (probably) (for now)
 (when (equal system-name "catenary")
 
-;;; Slime
+  ;; Slime
   (setq inferior-lisp-program "/usr/bin/sbcl")
   (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
   (require 'slime)
   (slime-setup '(slime-fancy))
 
-;;; Icicles mode for enhanced tab-completion, regexes etc.
+  ;; Icicles mode for enhanced tab-completion, regexes etc.
   (setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
   (require 'icicles)
   (eval-after-load "ring" '(progn (require 'ring+)))
 
-;;; Android Mode
+  ;; Android Mode
   (require 'android-mode)
   (setq android-mode-sdk-dir "/opt/android-sdk/")
   (setq android-mode-avd "galaxy2"))
