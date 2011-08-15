@@ -18,7 +18,7 @@ URxvt.internalBorder: 1
 URxvt.externalBorder: 1
 URxvt.scrollWithBuffer: false
 urxvt*termName:  rxvt-256color
-urxvt*loginShell:         true
+urxvt*loginShell:        false
 urxvt*scrollBar:         false
 urxvt*secondaryScroll:    true
 urxvt*saveLines:          1000
