@@ -2,21 +2,23 @@
 
 ;;; Modeline settings
 ;;; Prettier than the default
-(setq default-mode-line-format
-      '(" "
-	mode-line-mule-info
-	mode-line-modified
-	mode-line-frame-identification
-	mode-line-buffer-identification
+ (setq default-mode-line-format
+       '(" "
+ 	mode-line-mule-info
+ 	mode-line-modified
+ 	mode-line-frame-identification
+ 	mode-line-buffer-identification
+ 	"  "
+ 	global-mode-string
+ 	"   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]  "
+ 	(line-number-mode "L%l--")
+ 	(column-number-mode "C%c--")
+ 	(-3 . "%p")
 	"  "
-	global-mode-string
-	"   %[(" mode-name mode-line-process minor-mode-alist "%n"")%]  "
-	(line-number-mode "L%l--")
-	(column-number-mode "C%c--")
-	(-3 . "%p")
-	"      "
-	system-name)
-      )
+	(:eval (list (nyan-create)))
+ 	"   "
+ 	system-name)
+       )
 
 ;;; Color Theme (zenburn, naturally)
 (require 'color-theme)
@@ -116,6 +118,9 @@
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil))) 
 
+;;; Complete silliness
+(require 'nyan-mode)
+(nyan-start-animation)
 
 
 ;;; Things that only work on my laptop
