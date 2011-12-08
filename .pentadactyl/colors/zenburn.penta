@@ -36,7 +36,7 @@ hi Hint::after				content: attr(number);
 hi HintActive				background: #F18C96; color: #333333;
 hi HintElem				background-color: #8FAF9F; color: #000D18;
 hi HintImage				opacity: .5;
-hi Indicator				color: #94BFF3;
+hi Indicator				color: #94BFF3; min-height: 16px;
 hi InfoMsg				color: #DCDCCD; background: #3F3F3F;
 hi LineNr				color: orange; background: #3F3F3F;
 hi Message				white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
