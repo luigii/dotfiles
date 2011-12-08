@@ -65,6 +65,7 @@ chatnets = {
   };
   SILC = { type = "SILC"; };
   Intersocs = { type = "IRC"; };
+  Rizon = { type = "IRC"; };
 };
 
 channels = (
@@ -233,7 +234,7 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Conall Ó Maitiú";
+    real_name = "";
     user_name = "luigii";
     nick = "luigii";
 
@@ -244,8 +245,8 @@ settings = {
 };
 ignores = ( { level = "JOINS PARTS QUITS"; channels = ( "#4chan" ); } );
 hilights = (
-  { text = "luigii "; nick = "yes"; word = "yes"; },
-  { text = "conall"; nick = "yes"; word = "yes"; }
+  { text = "conall"; nick = "yes"; word = "yes"; },
+  { text = "luigii"; nick = "yes"; word = "yes"; }
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
@@ -255,7 +256,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#netsoc";
-        tag = "matrix";
+        tag = "tcd";
       }
     );
   };
@@ -265,7 +266,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#ducss";
-        tag = "matrix";
+        tag = "tcd";
       }
     );
   };
@@ -275,27 +276,18 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#tcd2014";
-        tag = "matrix";
+        tag = "tcd";
       }
     );
   };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#netsoc-admin";
-        tag = "matrix";
-      }
-    );
-  };
+  5 = { };
   6 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#intersocs";
-        tag = "matrix";
+        tag = "tcd";
       }
     );
   };
@@ -304,8 +296,8 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#deadbeefplayer";
-        tag = "freenode";
+        name = "#tcd2015";
+        tag = "tcd";
       }
     );
   };
@@ -315,7 +307,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#pirateparty";
-        tag = "matrix";
+        tag = "tcd";
       }
     );
   };
@@ -324,8 +316,8 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#anime";
-        tag = "matrix";
+        name = "#deadbeefplayer";
+        tag = "freenode";
       }
     );
   };
@@ -334,18 +326,50 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#4chan";
-        tag = "rizon";
+        name = "#northside";
+        tag = "tcd";
       }
     );
   };
-  11 = {
+  11 = { };
+  12 = { };
+  13 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#testderp";
-        tag = "matrix";
+        name = "#gaeilge";
+        tag = "tcd";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#anime";
+        tag = "tcd";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#thesite";
+        tag = "wigornot";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#francais";
+        tag = "tcd";
       }
     );
   };
