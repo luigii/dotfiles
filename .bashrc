@@ -57,6 +57,7 @@ export COUNTRY='IE'
 export LANG=en_IE.UTF-8
 export EDITOR='emacsclient -t -a ""'
 export ALTERNATE_EDITOR=""
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # adding perl and sonata (ugh) to my path
 PATH=$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin:/usr/lib/openssh
@@ -86,6 +87,7 @@ shopt -s histappend
 #export ftp_proxy="spoon.netsoc.tcd.ie:8000"
 
 # Proxies for anywhere else in college
-#export http_proxy="localhost:8080"
-#export https_proxy="localhost:8080"
-#export ftp_proxy="localhost:8080"
+# export http_proxy="localhost:8080"
+# export https_proxy="localhost:8080"
+# export ftp_proxy="localhost:8080"
+# export socks_proxy="localhost:8080"
