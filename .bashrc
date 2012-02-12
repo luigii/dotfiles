@@ -4,12 +4,14 @@
 [ -z "$PS1" ] && return
 
 # The all-important coloured prompt 
-if [ "$HOSTNAME" = "catenary" ]
+if [ "$USER" = "conall" ]
 then
-    PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
-elif [ "$HOSTNAME" = "spoon.netsoc.tcd.ie" -o "$HOSTNAME" = "cube" ]
+#    PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
+    PS1='\[\e[38;5;2m\]\u@\h \W \[\e[0m\]\$ '
+elif [ "$USER" = "luigii" ]
 then
-    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
+#    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
+    PS1='\[\e[38;5;6m\]\u@\h \W \[\e[0m\]\$ '
 fi
 
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -28,10 +30,6 @@ alias scr="tmux -2 attach"
 
 ### Mountpoints and options are long and boring to type out
 
-# keith and raid no longer work since keith became a Lion box
-
-#alias keith='sudo mount -t cifs //keith/Warez /mnt/keith/ -o guest'
-#alias raid='sudo mount -t cifs //keith/RAID /mnt/raid -o guest'
 alias spoon='sshfs luigii@spoon: ~/spoon'
 
 
