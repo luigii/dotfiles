@@ -7,30 +7,23 @@
 if [ "$USER" = "conall" ]
 then
 #    PS1='\e]2;\u@\H \w\a\e[32m\u@\h \W \e[0m\$ '
-    PS1='\[\033]0;\u@\h \w\007\]\[\e[38;5;2m\]\u@\h \W \[\e[0m\]\$ '
+#    PS1='\[\033]0;\u@\h \w\007\]\[\e[38;5;2m\]\u@\h \W \[\e[0m\]\$ '
+    PS1='\[\e]0;\u@\h \w\a\e[38;5;2m\]\u@\h \W \[\e[0m\]\$ '
 elif [ "$USER" = "luigii" ]
 then
 #    PS1='\e]2;\u@\H \w\a\e[35m\u@\h \W \e[0m\$ '
-    PS1='\[\033]0;\u@\h \w\007\]\[\e[38;5;6m\]\u@\h \W \[\e[0m\]\$ '
+#    PS1='\[\033]0;\u@\h \w\007\]\[\e[38;5;6m\]\u@\h \W \[\e[0m\]\$ '
+    PS1='\[\e]0;\u@\h \w\a\e[38;5;6m\]\u@\h \W \[\e[0m\]\$ '
 fi
 
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-if [ -f /etc/bash_completion ] 
-then
-    . /etc/bash_completion
-fi
 
 ### Little shorthand aliases to make life easier
 
 alias lock="xscreensaver-command -lock"
 alias suspend='sudo pm-suspend'
 alias scr="tmux -2 attach -d" 
-
-
-### Mountpoints and options are long and boring to type out
-
-alias spoon='sshfs luigii@spoon: ~/spoon'
 
 
 ### External monitor commands for my 1080p monitor
@@ -58,7 +51,7 @@ export ALTERNATE_EDITOR=""
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # adding perl and sonata (ugh) to my path
-PATH=$HOME/local/bin:$PATH:/usr/bin/site_perl:/opt/simili/bin:/opt/simili/tcl/bin:/usr/lib/openssh
+PATH=$HOME/local/bin:$PATH:/usr/bin/site_perl:/opt/NX/bin:/opt/simili/bin:/opt/simili/tcl/bin:/usr/lib/openssh
 export PATH
 
 # unlimited history, because why not?
