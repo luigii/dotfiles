@@ -12,8 +12,8 @@ Xft.rgba:      rgb
 !{{{ URXVT
 !
 ! General
-URxvt.font: xft:Dina-font:style=regular:pixelsize=14:antialias=false
-URxvt.boldFont: xft:dina-font:bold:pixelsize=14:antialias=false
+URxvt.font: xft:Dina:style=regular:pixelsize=14:antialias=false
+URxvt.boldFont: xft:Dina:style=bold:pixelsize=14:antialias=false
 URxvt.internalBorder: 1
 URxvt.externalBorder: 1
 URxvt.scrollWithBuffer: false
