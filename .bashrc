@@ -16,7 +16,7 @@ then
     PS1='\[\e]0;\u@\h \w\a\e[38;5;6m\]\u@\h \W \[\e[0m\]\$ '
 fi
 
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r;"
 
 
 ### Little shorthand aliases to make life easier
@@ -40,7 +40,7 @@ alias scrot="scrot /home/conall/images/screencaps/%Y-%m-%d-%R.png"
 alias emacs='emacsclient -t'
 alias texi2pdf='texi2pdf --build=clean -q'
 alias df='df -h'
-
+alias pacman='pacman-color'
 
 ### Non-proxy env variables
 
