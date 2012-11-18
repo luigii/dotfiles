@@ -14,17 +14,13 @@
  	(line-number-mode "L%l--")
  	(column-number-mode "C%c--")
  	(-3 . "%p")
-	"  "
-	(:eval (list (nyan-create)))
- 	"   "
+	"     "
  	system-name)
        )
 
-;;; Color Theme (zenburn, naturally)
-(require 'color-theme)
-(add-to-list 'load-path "~/.emacs.d/color-themes")
-(require 'zenburn-theme)
-(setq color-theme-is-global t) 
+;;; Color Theme, now using deftheme (zenburn, naturally)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes")
+(load-theme 'zenburn t)
 
 ;;; Encoding (you can never be sure)
 (prefer-coding-system 'utf-8)
@@ -75,6 +71,9 @@
 (setq initial-scratch-message nil)
 (scroll-bar-mode -1)
 
+;;; Un-disable commands that are childlocked
+(put 'upcase-region 'disabled nil)
+
 ;;; Always highlight syntax
 (global-font-lock-mode t)
 
@@ -109,6 +108,17 @@
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
 (require 'erlang-start)
 
+;;; Haskell Mode
+(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file.elc")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
+;;; Slime
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+(require 'slime)
+(slime-setup '(slime-fancy))
+
 ;;; Making sure dabbrev works nicely
 (setq dabbrev-case-fold-search t)
 
@@ -118,20 +128,10 @@
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil))) 
 
-;;; Complete silliness
-(require 'nyan-mode)
-(nyan-start-animation)
-
 
 ;;; Things that only work on my laptop
 ;;; (probably) (for now)
 (when (equal system-name "catenary")
-
-  ;; Slime
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-  (require 'slime)
-  (slime-setup '(slime-fancy))
 
   ;; Icicles mode for enhanced tab-completion, regexes etc.
   (setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
