@@ -253,6 +253,11 @@ map <C-c>t :exe ":tinyurl "+getBrowser().contentWindow.location.href<CR>
 " }}}
 " }}}
 
+" Custom website-specific workarounds
+
+" twitter.com captures text in insert mode for keybindings, ruining everything.
+" This fixes that problem
+set strictfocus='chrome:*':laissez-faire,'twitter.com':despotic,*:moderate
 
 " {{{ Javascript functions
 "
