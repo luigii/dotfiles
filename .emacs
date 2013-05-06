@@ -128,17 +128,7 @@
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil))) 
 
-
-;;; Things that only work on my laptop
-;;; (probably) (for now)
-(when (equal system-name "catenary")
-
-  ;; Icicles mode for enhanced tab-completion, regexes etc.
-  (setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
-  (require 'icicles)
-  (eval-after-load "ring" '(progn (require 'ring+)))
-
-  ;; Android Mode
-  (require 'android-mode)
-  (setq android-mode-sdk-dir "/opt/android-sdk/")
-  (setq android-mode-avd "galaxy2"))
+;; Icicles mode for enhanced tab-completion, regexes etc.
+(setq load-path (cons "/usr/share/emacs/site-lisp/icicles" load-path))
+(require 'icicles)
+(eval-after-load "ring" '(progn (require 'ring+)))
