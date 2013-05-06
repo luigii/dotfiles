@@ -122,6 +122,10 @@
 ;;; Making sure dabbrev works nicely
 (setq dabbrev-case-fold-search t)
 
+;;; Make sure re-builder is in string mode, because the default is a pain
+(require 're-builder)
+(setq reb-re-syntax 'string)
+
 ;;; Other aliases and keybindings
 (defalias 'cr 'comment-region)
 (global-set-key (kbd "M-g") 'goto-line)
