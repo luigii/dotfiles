@@ -53,7 +53,7 @@ set ds=yubnub
 "     - Emacs GTK key-theme and FF already provide bindings for input fields
 " 
 " M-x enters command mode
-noremap <A-x> :
+map -builtin <A-x> :
 
 " Emacs navigation in command line and insert mode
 cmap <C-n> <Tab>
@@ -61,120 +61,119 @@ cmap <C-p> <S-Tab>
 cmap <C-f> <Right>
 cmap <C-b> <Left>
 cmap <C-j> <CR>
-noremap <C-j> <CR>
-inoremap <C-j> <CR>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
+imap -builtin <C-j> <CR>
+imap -builtin <C-n> <Down>
+imap -builtin <C-p> <Up>
+imap -builtin <C-f> <Right>
+imap -builtin <C-b> <Left>
 
 " Use C-f and C-b for tab browsing
-noremap <C-f> <C-n>
-noremap <C-b> <C-p>
+map -builtin <C-f> <C-n>
+map -builtin <C-b> <C-p>
 
 " Use C-a and C-e to jump to first/last tab
 "noremap <C-a> g0
 "noremap <C-e> g$
 "
 " Or use them to go to the absolute left/right of the document
-noremap <C-a> 0
-noremap <C-e> $
+map -builtin <C-a> 0
+map -builtin <C-e> $
 
 " Use C-p and C-n for up/down
-noremap <C-p> 2k
-noremap <C-n> 2j
+map -builtin <C-p> 2k
+map -builtin <C-n> 2j
 
 " Use C-v and M-v for jump scrolling
-noremap <C-v> <C-d>
-noremap <A-v> <C-u>
+map -builtin <C-v> <C-d>
+map -builtin <A-v> <C-u>
 
 " Goto the top of the document with M-<
-noremap <A-<> gg
+map -builtin <A-<> gg
 
 " Goto the end of the document with M->
-noremap <A->> G
+map -builtin <A->> G
 
 " Use C-s and C-r for searching (n/N for next/prev as in less)
-noremap <C-s> /
-noremap <C-r> ?
+map -builtin <C-s> /
+map -builtin <C-r> ?
 
 " Copy the current URL to the clipboard with M-w
-noremap <A-w> y
+map -builtin <A-w> y
 "
 " Copy selected text to the clipboard with C-w 
-noremap <C-w> Y
+map -builtin <C-w> Y
 
 " Paste the current clipboard selection to a new buffer with C-y
-noremap <C-y> P
+map -builtin <C-y> P
 
 " Use current URL as a start for a new location with C-x C-v
-noremap <C-x><C-v> O
+map -builtin <C-x><C-v> O
 
 " C-g as cancel (C-q is stop)
 cmap <C-g> <Esc>
 imap <C-g> <Esc>
-noremap <C-g> <Esc>
+map -builtin <C-g> <Esc>
 
 " Avoid Find dialog when canceling a started command, C-x C-g
-noremap <C-x><C-g> <Esc>
+map -builtin <C-x><C-g> <Esc>
 "
 " Avoid quit on C-q, and it's more suitable for Stop here
-noremap <C-q> :stop<CR>
+map -builtin <C-q> :stop<CR>
 
 " Kill the buffer with C-x k
-noremap <C-x>k d
+map -builtin <C-x>k d
 
 " Undo close tab with C-_ (also with C-Shift-t, as C-t is new tab)
-noremap <C-_> u
+map -builtin <C-_> u
 
 " Exit and save the session with C-x C-c
-noremap <C-x><C-c> ZZ
+map -builtin <C-x><C-c> ZZ
 
 " Buffer lists with C-x b and C-x C-b
-noremap <C-x>b b
-noremap <C-x><C-b> B
+map -builtin <C-x>b b
+map -builtin <C-x><C-b> B
 
 " Open a link in a new tab with C-x t
 " Open a link in the current tab with C-x l
-noremap <C-x>t :t<SPACE>
-noremap <C-x>l :o<SPACE>
+map -builtin <C-x>t :t<SPACE>
+map -builtin <C-x>l :o<SPACE>
 
 " Open hints in new tab by default (switch roles of f and F)
 "noremap f F
 "noremap F f
 
 " Switch hints to letter "j", for right hand usage
-noremap j f
-noremap J F
+map -builtin j f
+map -builtin J F
 "
 " Extended hint mode with M-j
 "  ; - focus link, a - save, y - copy link, O - :open query, T - for :tabopen ...
-noremap <A-j> ;
+map -builtin <A-j> ;
 
 " We can now also use F for Shift+b/f as back/forward
-noremap F L
-noremap B H
+map -builtin F L
+map -builtin B H
 
 " Back with Backspace as well
 map <BS> H
 
 " Use C-h i to start help
-noremap <C-h>i :help<CR>
+map -builtin <C-h>i :help<CR>
 
 " Record a key sequence into a macro with C-x (
-noremap <C-x>( q
+map -builtin <C-x>( q
 
 " Play a macro with C-x e
-noremap <C-x>e @
+map -builtin <C-x>e @
 
 " Set a mark at the cursor with C-x r m
-noremap <C-x>rm m
+map -builtin <C-x>rm m
 
 " Jump to the mark in the current buffer with C-x r b
-noremap <C-x>rb '
+map -builtin <C-x>rb '
 
 " C-v was pass-next, remap to bind with default keys
-noremap <C-d> <C-v>
+map -builtin <C-d> <C-v>
 "
 " C-x C-f starts the "Open File" dialog (C-x C-s is Save)
 map <C-x><C-f> <C-d><C-o>
@@ -274,4 +273,4 @@ EOF
 " }}}
 
 
-echo "[vimperator initialized]"
+echo "[Emacs config started]"
